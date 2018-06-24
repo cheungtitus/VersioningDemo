@@ -4,7 +4,7 @@
 
     <groupId>org.ea</groupId>
     <artifactId>VersioningDemo</artifactId>
-    <version>0.51</version>
+    <version>0.5-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -20,7 +20,7 @@
         <connection>scm:git:git@github.com:cheungtitus/VersioningDemo.git</connection>
         <developerConnection>scm:git:git@github.com:cheungtitus/VersioningDemo.git</developerConnection>
         <url>https://github.com/cheungtitus/VersioningDemo</url>
-        <tag>VersioningDemo-0.51</tag>
+        <tag>@{project.version}</tag>
     </scm>
 
     <build>
@@ -33,7 +33,9 @@
                     <goals>pre-integration-test</goals>
                     <preparationGoals>package</preparationGoals>
                     <tagNameFormat>@{project.artifactId}-@{project.version}</tagNameFormat>
-                    <tagBase>https://github.com/cheungtitus/VersioningDemo/tags</tagBase>
+                    <tagBase>
+                        scm:git:git@github.com:cheungtitus/VersioningDemo/tags
+                    </tagBase>
                 </configuration>
             </plugin>
         </plugins>

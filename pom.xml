@@ -20,7 +20,7 @@
         <connection>scm:git:git@github.com:cheungtitus/VersioningDemo.git</connection>
         <developerConnection>scm:git:git@github.com:cheungtitus/VersioningDemo.git</developerConnection>
         <url>https://github.com/cheungtitus/VersioningDemo</url>
-        <tag>@{project.version}</tag>
+        <tag>my-branch</tag>
     </scm>
 
     <build>

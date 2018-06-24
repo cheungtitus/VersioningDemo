@@ -33,9 +33,7 @@
                     <goals>pre-integration-test</goals>
                     <preparationGoals>package</preparationGoals>
                     <tagNameFormat>@{project.artifactId}-@{project.version}</tagNameFormat>
-                    <tagBase>
-                        scm:git:git@github.com:cheungtitus/VersioningDemo/tags
-                    </tagBase>
+                    <tagBase>https://github.com/cheungtitus/VersioningDemo/tags</tagBase>
                 </configuration>
             </plugin>
         </plugins>

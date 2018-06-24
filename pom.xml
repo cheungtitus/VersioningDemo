@@ -17,38 +17,14 @@
     </properties>
 
     <scm>
-        <connection>scm:git:git@github.com:kalaspuffar/VersioningDemo.git</connection>
-        <developerConnection>scm:git:git@github.com:kalaspuffar/VersioningDemo.git</developerConnection>
-        <url>https://github.com/kalaspuffar/VersioningDemo</url>
+        <connection>scm:git:git@github.com:cheungtitus/VersioningDemo.git</connection>
+        <developerConnection>scm:git:git@github.com:cheungtitus/VersioningDemo.git</developerConnection>
+        <url>https://github.com/cheungtitus/VersioningDemo</url>
         <tag>@{project.version}</tag>
     </scm>
 
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                            <mainClass>org.ea.VersioningDemo</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
@@ -56,9 +32,10 @@
                 <configuration>
                     <goals>pre-integration-test</goals>
                     <preparationGoals>package</preparationGoals>
-                    <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
-                    <tagNameFormat>@{project.version}</tagNameFormat>
-                    <remoteTagging>false</remoteTagging>
+                    <tagNameFormat>@{project.artifactId}-@{project.version}</tagNameFormat>
+                    <tagBase>
+                        scm:git:git@github.com:cheungtitus/VersioningDemo/tags
+                    </tagBase>
                 </configuration>
             </plugin>
         </plugins>
